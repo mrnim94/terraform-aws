@@ -4,21 +4,17 @@ terraform {
   required_providers {
     aws = {
       source = "hashicorp/aws"
-      version = "~> 3.63"
+      version = "~> 3.70"
      }
   }
   # Adding Backend as S3 for Remote State Storage
   backend "s3" {
     bucket = "terraform-on-aws-eks-nim"
-    key    = "dev/eks-cluster/terraform.tfstate"
+    key    = "dev/eks-irsa-demo/terraform.tfstate"
     region = "us-east-1" 
- 
+
     # For State Locking
-    dynamodb_table = "dev-ekscluster"    
-  }  
+    dynamodb_table = "dev-eks-irsa-demo"    
+  }     
 }
 
-# Terraform Provider Block
-# provider "aws" {
-#   region = var.aws_region
-# }
