@@ -41,6 +41,14 @@ module "public_vpc" {
   enable_dns_hostnames   = true
   enable_nat_gateway     = false
   enable_vpn_gateway     = false
+
+  map_public_ip_on_launch = true
+
+  # public_subnet_tags = {
+  #   "kubernetes.io/cluster/${var.eks_cluster_name}" = "shared"
+  #   "kubernetes.io/role/elb"                    = "1"
+  #   "MapPublicIpOnLaunch"                       = "true"
+  # }
 }
 # resource "aws_iam_instance_profile" "ec2_eks_terraform" {
 #   name = "ec2_eks_terraform"

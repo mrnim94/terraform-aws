@@ -1,7 +1,13 @@
-variable "private_subnet_ids" {
-  description = "Please enter a list of private subnet ids to be used"
+# variable "private_subnet_ids" {
+#   description = "Please enter a list of private subnet ids to be used"
+#   type        = any
+# }
+
+variable "public_subnet_ids" {
+  description = "Please enter a list of public subnet ids to be used"
   type        = any
 }
+
 variable "bastion_host_SG_id" {
   description = "Please enter the ID of the security group of the bastion host"
   type        = string

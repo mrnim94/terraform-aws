@@ -1,7 +1,7 @@
 region = "us-east-1"
 ### Cluster
 eks_cluster_name = "sample-cluster-01"
-eks_cluster_version = "1.24"
+eks_cluster_version = "1.23"
 
 ### Linux Nodegroup
 lin_desired_size = "2"

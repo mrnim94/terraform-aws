@@ -34,8 +34,9 @@ module "cluster" {
     region = var.region
     eks_cluster_name = var.eks_cluster_name
     eks_cluster_version = var.eks_cluster_version 
-    private_subnet_ids = data.terraform_remote_state.network.outputs.out_private_vpc.private_subnets
-    vpc_id = data.terraform_remote_state.network.outputs.out_private_vpc.vpc_id
+    # private_subnet_ids = data.terraform_remote_state.network.outputs.out_private_vpc.private_subnets
+    public_subnet_ids = data.terraform_remote_state.network.outputs.out_public_vpc.public_subnets
+    vpc_id = data.terraform_remote_state.network.outputs.out_public_vpc.vpc_id
     bastion_host_SG_id = data.terraform_remote_state.network.outputs.out_bastion_host_security_group_id
     lin_desired_size = var.lin_desired_size
     lin_max_size = var.lin_max_size
